@@ -2,15 +2,21 @@ from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
+
+
+
+
+
 # In-memory database
 books = [
     {"id": 1, "title": "The Alchemist", "author": "Paulo Coelho", "year": 1988},
     {"id": 2, "title": "Atomic Habits", "author": "James Clear", "year": 2018},
     {"id": 3, "title": "Rich Dad Poor Dad", "author": "Robert Kiyosaki", "year": 1997},
     {"id": 4, "title": "Clean Code", "author": "Robert C. Martin", "year": 2008},
-    {"id": 5, "title": "Harry Potter and the Sorcerer's Stone", "author": "J.K. Rowling", "year": 1997}
+    {"id": 5, "title": "Harry Potter and the Sorcerer's Stone", "author": "J.K. Rowling", "year": 1997},
+    {"id": 6, "title": "The Pragmatic Programmer", "author": "Andrew Hunt & David Thomas", "year": 1999}
 ]
-counter = 6
+counter = 7
 
 @app.get("/books")
 def get_books():
