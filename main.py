@@ -43,3 +43,11 @@ def delete_book(book_id: int):
             books.remove(book)
             return {"message": "Book deleted"}
     raise HTTPException(status_code=404, detail="Book not found")
+
+@app.get("/books/year/{year}")
+def get_books_by_year(year: int):
+    results = [book for book in books if book["year"] == year]
+    if results:
+        return results
+    raise HTTPException(status_code=404, detail="No books found for this year")
+
